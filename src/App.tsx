@@ -1,11 +1,15 @@
 import { Button, Link } from "@nextui-org/react";
+import { IoLogoLinkedin, IoLogoGithub } from "react-icons/io5";
+
 import {
-  IoLogoLinkedin,
-  IoLogoGithub,
-  IoLogoPython,
-  IoLogoJavascript,
-  IoLogoReact,
-} from "react-icons/io5";
+  BiLogoPython,
+  BiLogoJavascript,
+  BiLogoTypescript,
+  BiLogoJava,
+  BiLogoFlutter,
+  BiLogoDjango,
+  BiLogoReact,
+} from "react-icons/bi";
 
 import DarkModeToggle from "./DarkModeToggle";
 import Chip from "./Chip";
@@ -45,15 +49,27 @@ function App() {
               <DarkModeToggle isDarkMode={isDarkMode} toggle={toggle} />
             </div>
           </header>
-          <div className="flex gap-4">
-            <Chip icon={<IoLogoPython size={18} />} color="blue">
+          <div className="flex flex-wrap justify-between gap-y-2">
+            <Chip icon={<BiLogoPython size={18} />} color="orange">
               Python
             </Chip>
-            <Chip icon={<IoLogoJavascript size={18} />} color="yellow">
+            <Chip icon={<BiLogoJavascript size={18} />} color="yellow">
               JavaScript
             </Chip>
-            <Chip icon={<IoLogoReact size={18} />} color="cyan">
+            <Chip icon={<BiLogoTypescript size={18} />} color="blue">
+              TypeScript
+            </Chip>
+            <Chip icon={<BiLogoJava size={18} />} color="red">
+              Java
+            </Chip>
+            <Chip icon={<BiLogoReact size={18} />} color="cyan">
               React
+            </Chip>
+            <Chip icon={<BiLogoFlutter size={18} />} color="sky">
+              Flutter
+            </Chip>
+            <Chip icon={<BiLogoDjango size={18} />} color="green">
+              Django
             </Chip>
           </div>
         </div>
