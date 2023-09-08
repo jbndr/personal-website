@@ -23,8 +23,11 @@ function App() {
     <div className={`${isDarkMode ? "dark" : "light"}`}>
       <div className="h-screen bg-zinc-50 px-6 text-zinc-950 dark:bg-zinc-950 dark:text-zinc-50">
         <div className="m-auto grid h-full max-w-3xl grid-rows-[auto_1fr_auto] py-8">
-          <header className="flex items-center justify-between border-b-1 border-zinc-200 pb-6 dark:border-zinc-900">
-            <span className="font-bold">Johannes Binder</span>
+          <header className="flex items-center justify-between border-b-1 border-zinc-200 pb-4 dark:border-zinc-900">
+            <div className="flex flex-col justify-center">
+              <span className="text-xl font-bold">Johannes Binder</span>
+              <span className="text-sm">Software Engineer</span>
+            </div>
             <div className="flex gap-x-1">
               <Button
                 href="https://www.linkedin.com/in/johannes-binder-b608a5160/"
@@ -50,7 +53,7 @@ function App() {
             </div>
           </header>
           <main className="flex flex-col gap-y-2 py-6">
-            <span className="text-xl font-semibold">Experience</span>
+            <span className="font-semibold">Experience</span>
             <div className="flex flex-wrap justify-between gap-2">
               <Chip icon={<BiLogoPython size={18} />} color="orange">
                 Python
@@ -76,7 +79,7 @@ function App() {
             </div>
           </main>
           <footer className="mt-auto">
-            <div className="flex w-full justify-between border-t-1 border-zinc-200 pt-6 text-sm dark:border-zinc-900">
+            <div className="flex w-full justify-between border-t-1 border-zinc-200 pt-12 text-sm dark:border-zinc-900">
               <span>By Johannes</span>
               <span>© 2023</span>
             </div>
