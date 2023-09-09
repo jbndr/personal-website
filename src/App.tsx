@@ -1,21 +1,26 @@
-import { Button, Link } from "@nextui-org/react";
-import { IoLogoLinkedin, IoLogoGithub } from "react-icons/io5";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from 'framer-motion';
+import {
+  BiLogoDjango,
+  BiLogoFlutter,
+  BiLogoJava,
+  BiLogoJavascript,
+  BiLogoPython,
+  BiLogoReact,
+  BiLogoTypescript,
+} from 'react-icons/bi';
+import {
+  IoLogoGithub,
+  IoLogoLinkedin,
+} from 'react-icons/io5';
+import { useDarkMode } from 'usehooks-ts';
 
 import {
-  BiLogoPython,
-  BiLogoJavascript,
-  BiLogoTypescript,
-  BiLogoJava,
-  BiLogoFlutter,
-  BiLogoDjango,
-  BiLogoReact,
-} from "react-icons/bi";
+  Button,
+  Link,
+} from '@nextui-org/react';
 
-import DarkModeToggle from "./DarkModeToggle";
-import Chip from "./Chip";
-
-import { useDarkMode } from "usehooks-ts";
+import Chip from './Chip';
+import DarkModeToggle from './DarkModeToggle';
 
 const tech = [
   {
@@ -53,7 +58,7 @@ const tech = [
     icon: <BiLogoDjango />,
     color: "green",
   },
-];
+] as const;
 
 function App() {
   const { isDarkMode, toggle } = useDarkMode();

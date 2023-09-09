@@ -1,6 +1,13 @@
-import { Button } from "@nextui-org/react";
-import { motion, AnimatePresence } from "framer-motion";
-import { IoMoon, IoSunny } from "react-icons/io5";
+import {
+  AnimatePresence,
+  motion,
+} from 'framer-motion';
+import {
+  IoMoon,
+  IoSunny,
+} from 'react-icons/io5';
+
+import { Button } from '@nextui-org/react';
 
 interface DarkModeToggleProps {
   isDarkMode: boolean;
