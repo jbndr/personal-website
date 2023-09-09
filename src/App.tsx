@@ -17,6 +17,44 @@ import Chip from "./Chip";
 
 import { useDarkMode } from "usehooks-ts";
 
+const tech = [
+  {
+    name: "Python",
+    icon: <BiLogoPython />,
+    color: "orange",
+  },
+  {
+    name: "JavaScript",
+    icon: <BiLogoJavascript />,
+    color: "yellow",
+  },
+  {
+    name: "TypeScript",
+    icon: <BiLogoTypescript />,
+    color: "blue",
+  },
+  {
+    name: "Java",
+    icon: <BiLogoJava />,
+    color: "red",
+  },
+  {
+    name: "React",
+    icon: <BiLogoReact />,
+    color: "cyan",
+  },
+  {
+    name: "Flutter",
+    icon: <BiLogoFlutter />,
+    color: "sky",
+  },
+  {
+    name: "Django",
+    icon: <BiLogoDjango />,
+    color: "green",
+  },
+];
+
 function App() {
   const { isDarkMode, toggle } = useDarkMode();
 
@@ -57,36 +95,45 @@ function App() {
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -50 }}
-            transition={{ duration: 0.5, type: "spring", bounce: 0.2 }}
           >
             <main className="flex flex-col gap-y-2 py-6">
-              <span className="text-xl">Hey, I'm Johannes.</span>
-              <span className="text-lg font-semibold">Experience</span>
-              <div className="flex flex-wrap justify-between gap-2">
-                <Chip icon={<BiLogoPython size={18} />} color="orange">
-                  Python
-                </Chip>
-                <Chip icon={<BiLogoJavascript size={18} />} color="yellow">
-                  JavaScript
-                </Chip>
-                <Chip icon={<BiLogoTypescript size={18} />} color="blue">
-                  TypeScript
-                </Chip>
-                <Chip icon={<BiLogoJava size={18} />} color="red">
-                  Java
-                </Chip>
-                <Chip icon={<BiLogoReact size={18} />} color="cyan">
-                  React
-                </Chip>
-                <Chip icon={<BiLogoFlutter size={18} />} color="sky">
-                  Flutter
-                </Chip>
-                <Chip icon={<BiLogoDjango size={18} />} color="green">
-                  Django
-                </Chip>
-              </div>
+              <motion.span
+                className="text-xl"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+              >
+                Hey there, I'm Johannes.
+              </motion.span>
+
+              <motion.p
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.45 }}
+                className=" text-neutral-600 dark:text-neutral-400"
+              >
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+                takimata sanctus est Lorem ipsum dolor sit amet.
+              </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.7 }}
+                className="flex flex-wrap items-start gap-2"
+              >
+                {tech.map((item) => (
+                  <Chip icon={item.icon} color={item.color}>
+                    {item.name}
+                  </Chip>
+                ))}
+              </motion.div>
             </main>
           </motion.div>
+
           <footer className="mt-auto">
             <div className="flex w-full justify-between border-t-1 border-zinc-200 pt-12 text-sm dark:border-zinc-900">
               <span>By Johannes</span>

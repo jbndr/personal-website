@@ -22,7 +22,7 @@ interface ChipProps {
 const Chip = ({ children, color, icon = null }: ChipProps) => {
   return (
     <span
-      className={`${colorVariants[color]} flex items-center justify-center gap-x-2 border-b-1 bg-opacity-20 px-2 py-1 font-medium dark:bg-opacity-20`}
+      className={`${colorVariants[color]} flex select-none items-center gap-x-2 border-b-1 bg-opacity-20 px-2 py-1 font-medium dark:bg-opacity-20`}
     >
       {icon && icon}
       {children}
