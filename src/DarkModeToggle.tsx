@@ -16,7 +16,13 @@ interface DarkModeToggleProps {
 
 const DarkModeToggle = ({ isDarkMode, toggle }: DarkModeToggleProps) => {
   return (
-    <Button isIconOnly variant="light" size="sm" onClick={toggle}>
+    <Button
+      isIconOnly
+      variant="light"
+      size="sm"
+      onClick={toggle}
+      aria-label="Theme Toggle"
+    >
       <AnimatePresence mode="wait" initial={false}>
         {!isDarkMode ? (
           <motion.div

@@ -80,6 +80,7 @@ function App() {
                 isIconOnly
                 size="sm"
                 variant="light"
+                aria-label="Johannes Binder's LinkedIn Profile"
               >
                 <IoLogoLinkedin color="currentColor" size={18} />
               </Button>
@@ -90,6 +91,7 @@ function App() {
                 isIconOnly
                 size="sm"
                 variant="light"
+                aria-label="Johannes Binder's GitHub Profile"
               >
                 <IoLogoGithub size={18} />
               </Button>
@@ -110,7 +112,7 @@ function App() {
 
               <div className="flex flex-wrap items-start gap-2">
                 {tech.map((item) => (
-                  <Chip icon={item.icon} color={item.color}>
+                  <Chip key={item.name} icon={item.icon} color={item.color}>
                     {item.name}
                   </Chip>
                 ))}
