@@ -1,5 +1,6 @@
 import { Button, Link } from "@nextui-org/react";
 import { IoLogoLinkedin, IoLogoGithub } from "react-icons/io5";
+import { motion, AnimatePresence } from "framer-motion";
 
 import {
   BiLogoPython,
@@ -52,32 +53,40 @@ function App() {
               <DarkModeToggle isDarkMode={isDarkMode} toggle={toggle} />
             </div>
           </header>
-          <main className="flex flex-col gap-y-2 py-6">
-            <span className="font-semibold">Experience</span>
-            <div className="flex flex-wrap justify-between gap-2">
-              <Chip icon={<BiLogoPython size={18} />} color="orange">
-                Python
-              </Chip>
-              <Chip icon={<BiLogoJavascript size={18} />} color="yellow">
-                JavaScript
-              </Chip>
-              <Chip icon={<BiLogoTypescript size={18} />} color="blue">
-                TypeScript
-              </Chip>
-              <Chip icon={<BiLogoJava size={18} />} color="red">
-                Java
-              </Chip>
-              <Chip icon={<BiLogoReact size={18} />} color="cyan">
-                React
-              </Chip>
-              <Chip icon={<BiLogoFlutter size={18} />} color="sky">
-                Flutter
-              </Chip>
-              <Chip icon={<BiLogoDjango size={18} />} color="green">
-                Django
-              </Chip>
-            </div>
-          </main>
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -50 }}
+            transition={{ duration: 0.5, type: "spring", bounce: 0.2 }}
+          >
+            <main className="flex flex-col gap-y-2 py-6">
+              <span className="text-xl">Hey, I'm Johannes.</span>
+              <span className="text-lg font-semibold">Experience</span>
+              <div className="flex flex-wrap justify-between gap-2">
+                <Chip icon={<BiLogoPython size={18} />} color="orange">
+                  Python
+                </Chip>
+                <Chip icon={<BiLogoJavascript size={18} />} color="yellow">
+                  JavaScript
+                </Chip>
+                <Chip icon={<BiLogoTypescript size={18} />} color="blue">
+                  TypeScript
+                </Chip>
+                <Chip icon={<BiLogoJava size={18} />} color="red">
+                  Java
+                </Chip>
+                <Chip icon={<BiLogoReact size={18} />} color="cyan">
+                  React
+                </Chip>
+                <Chip icon={<BiLogoFlutter size={18} />} color="sky">
+                  Flutter
+                </Chip>
+                <Chip icon={<BiLogoDjango size={18} />} color="green">
+                  Django
+                </Chip>
+              </div>
+            </main>
+          </motion.div>
           <footer className="mt-auto">
             <div className="flex w-full justify-between border-t-1 border-zinc-200 pt-12 text-sm dark:border-zinc-900">
               <span>By Johannes</span>
