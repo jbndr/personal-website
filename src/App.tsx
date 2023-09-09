@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import {
   BiLogoDjango,
   BiLogoFlutter,
@@ -17,6 +16,7 @@ import { useDarkMode } from 'usehooks-ts';
 import {
   Button,
   Link,
+  Spacer,
 } from '@nextui-org/react';
 
 import Chip from './Chip';
@@ -96,48 +96,61 @@ function App() {
               <DarkModeToggle isDarkMode={isDarkMode} toggle={toggle} />
             </div>
           </header>
-          <motion.div
-            initial={{ opacity: 0, y: 100 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -50 }}
-          >
+          <div>
             <main className="flex flex-col gap-y-2 py-6">
-              <motion.span
-                className="text-xl"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-              >
-                Hey there, I'm Johannes.
-              </motion.span>
+              <span className="text-xl">Hey, I'm Johannes.</span>
 
-              <motion.p
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.45 }}
-                className=" text-neutral-600 dark:text-neutral-400"
-              >
+              <p className="text-neutral-600 dark:text-neutral-400">
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                 diam nonumy eirmod tempor invidunt ut labore et dolore magna
                 aliquyam erat, sed diam voluptua. At vero eos et accusam et
                 justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
                 takimata sanctus est Lorem ipsum dolor sit amet.
-              </motion.p>
+              </p>
 
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.7 }}
-                className="flex flex-wrap items-start gap-2"
-              >
+              <div className="flex flex-wrap items-start gap-2">
                 {tech.map((item) => (
                   <Chip icon={item.icon} color={item.color}>
                     {item.name}
                   </Chip>
                 ))}
-              </motion.div>
+              </div>
+
+              <Spacer y={4} />
+
+              <span className="text-xl">Projects</span>
+
+              <div className="flex flex-col gap-y-4">
+                <div className="flex justify-between gap-x-12">
+                  <div className="flex w-4/5 flex-col">
+                    <span className="text-lg font-black">
+                      Splines for Radial Charts
+                    </span>
+                    <span className="text-neutral-600 dark:text-neutral-400">
+                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                      sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                      magna aliquyam erat.
+                    </span>
+                  </div>
+                  <div className="aspect-video h-28 w-28 bg-neutral-500" />
+                </div>
+
+                <div className="flex justify-between gap-x-12">
+                  <div className="flex w-4/5 flex-col">
+                    <span className="text-lg font-black">
+                      Solving the 3D Wave Equation Numerically
+                    </span>
+                    <span className="text-neutral-600 dark:text-neutral-400">
+                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                      sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                      magna aliquyam erat.
+                    </span>
+                  </div>
+                  <div className="aspect-video h-28 w-28 bg-neutral-500" />
+                </div>
+              </div>
             </main>
-          </motion.div>
+          </div>
 
           <footer className="mt-auto">
             <div className="flex w-full justify-between border-t-1 border-zinc-200 pt-12 text-sm dark:border-zinc-900">
